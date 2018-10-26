@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer.start();
+//                mediaPlayer.start();
                 Log.d("shubham","HELLO");
-//                Intent intent =new Intent(MainActivity.this,ExitActivity.class);
-//                startActivity(intent);
-//                finish();
+                Toast.makeText(MainActivity.this, "HELLO", Toast.LENGTH_LONG).show();
+                Intent intent =new Intent(MainActivity.this,ExitActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
