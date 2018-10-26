@@ -1,6 +1,7 @@
 package com.example.vips_pc.myapplication;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     Button btn_submit;
+
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +26,16 @@ public class MainActivity extends AppCompatActivity {
 
         textView.setText("HelloWorld");
 
+        mediaPlayer=MediaPlayer.create(MainActivity.this,R.raw.music);
+
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayer.start();
                 Log.d("shubham","HELLO");
-                Intent intent =new Intent(MainActivity.this,ExitActivity.class);
-                startActivity(intent);
-                finish();
+//                Intent intent =new Intent(MainActivity.this,ExitActivity.class);
+//                startActivity(intent);
+//                finish();
             }
         });
 
